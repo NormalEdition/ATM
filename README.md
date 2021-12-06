@@ -1,0 +1,17 @@
+# ATM
+1. Can't do transaction before setting a pin
+2. Set your pin (Only 4 characters allowed no alphabets allowed)
+3. Deposit
+4. Withdraw (Minimum 100, Maximum 10000, Only whole ammount, Insufficient balance)
+5. Check balance
+6. Print last 10 Transactions
+7. Change pin (Same pin not accepted)
+8. Cancel Transaction
+9. If you enter old password it detects.
+10. Maximum 4 chance to enter correct password. (Shows remaining chances)
+11. Once your account is blocked you can't perform any actions.
+
+
+
+Reason not to use List, Tupple, Set:
+Once we terminate the program all values reset to default.
