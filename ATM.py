@@ -3,7 +3,7 @@ td = datetime.datetime.now()
 time_date = td.strftime("%d-%m-%Y %H:%M:%S")  #To mention time and date in mini statement
 
 def set_pin():
-    check_pin = open("C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\pin.txt","r")  #To check pin set or not
+    check_pin = open("##LOCATION OF PIN.TXT FILE##","r")  #To check pin set or not
     ck_pin = check_pin.read()
 
     if ck_pin == "":
@@ -20,7 +20,7 @@ def set_pin():
             print("Use 4 characters(0-9).")
                 
         else:    
-            c_pin = open("C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\pin.txt","w")  #To write pin
+            c_pin = open("##LOCATION OF PIN.TXT FILE##","w")  #To write pin
             cw_pin = c_pin.write(set_pin)
             c_pin.close()
             print("Pin setup Successful.")
@@ -41,14 +41,14 @@ if initial_action == "1":
 for i in range(4):
     remain = 3 - i  #To know remaining chance
     
-    read_pin = open("C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\pin.txt","r")  #To read pin
+    read_pin = open("##LOCATION OF PIN.TXT FILE##","r")  #To read pin
     pin = read_pin.read()
 
-    read_balance = open("C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\amount.txt","r")  #To read balance
+    read_balance = open("##LOCATION OF AMOUNT.TXT FILE##","r")  #To read balance
     account_balance = read_balance.read()
     account_balance = int(account_balance)
 
-    read_old_pin = open("C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\old_pin.txt","r")  #To read old pin
+    read_old_pin = open("##LOCATION OF OLD_PIN.TXT FILE##","r")  #To read old pin
     old_pin = read_old_pin.read()
 
     if pin == "":
@@ -65,12 +65,12 @@ for i in range(4):
         deposit_amt = int(input("Depositing Amount: "))
         new_balance = account_balance + deposit_amt
         new_balance = str(new_balance)
-        c_balance = open("C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\amount.txt","w")  #To write deposit ammount
+        c_balance = open("##LOCATION OF AMOUNT.TXT FILE##","w")  #To write deposit ammount
         cw_balance = c_balance.write(new_balance)
         c_balance.close()
         print("Depositing of",deposit_amt,"is Successful. \nYour new balance:",new_balance,"\nPlease take your card")
         deposit_amt = str(deposit_amt)  #To write mini statement
-        m_balance = open("C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\mini_state.txt","a")
+        m_balance = open("##LOCATION OF MINI_STATE.TXT FILE##","a")
         ms_balance = m_balance.write(time_date)
         ms_balance = m_balance.write(" Deposit  ")
         ms_balance = m_balance.write(deposit_amt)
@@ -93,12 +93,12 @@ for i in range(4):
             new_balance = account_balance - withdraw_amt
             new_balance = str(new_balance)
             if withdraw_amt < account_balance:
-                c_balance = open("C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\amount.txt","w")  #To write withdraw ammount
+                c_balance = open("##LOCATION OF AMOUNT.TXT FILE##","w")  #To write withdraw ammount
                 cw_balance = c_balance.write(new_balance)
                 c_balance.close()
                 print("Withdraw Successful. \nPlease take your cash:",withdraw_amt,"\nYour new balance:",new_balance,"\nPlease take your card")
                 withdraw_amt = str(withdraw_amt)  #To write mini statement
-                m_balance = open("C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\mini_state.txt","a")
+                m_balance = open("##LOCATION OF MINI_STATE.TXT FILE##","a")
                 ms_balance = m_balance.write(time_date)
                 ms_balance = m_balance.write(" Withdraw ")
                 ms_balance = m_balance.write(withdraw_amt)
@@ -110,7 +110,7 @@ for i in range(4):
 
 #Mini Statement
     def mini_state():
-        ms = open('C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\mini_state.txt', 'r')  #To show mini statement
+        ms = open('##LOCATION OF MINI_STATE.TXT FILE##', 'r')  #To show mini statement
         mini = ms.readlines()  #To read line by line
         mini = mini[-10:]  #To select last lines
         mini.reverse()  #To reverse readed line
@@ -137,11 +137,11 @@ for i in range(4):
                 print("Use 4 characters(0-9).")
                 
             else:
-                old_pin = open("C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\old_pin.txt","w")  #To write old pin
+                old_pin = open("##LOCATION OF OLD_PIN.TXT FILE##","w")  #To write old pin
                 cw_old_pin = old_pin.write(ip_pin)
                 old_pin.close()
             
-                c_pin = open("C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\pin.txt","w")  #To write new pin
+                c_pin = open("##LOCATION OF PIN.TXT FILE##","w")  #To write new pin
                 cw_pin = c_pin.write(new_pin)
                 c_pin.close()
                 print("Pin change Successful.")
@@ -192,7 +192,7 @@ for i in range(4):
     else:
         print("\n**********ACCOUNT  BLOCKED********** \nContact our bank for further details.")
         
-        block_acc = open("C:\\Users\\Sulfur\\Desktop\\Pythonist\\My Projects\\ATM\\pin.txt","w")  #To block account permanently
+        block_acc = open("##LOCATION OF PIN.TXT FILE##","w")  #To block account permanently
         w_block = block_acc.write("ACCOUNT  BLOCKED")
         block_acc.close()
         break
