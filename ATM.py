@@ -1,3 +1,6 @@
+#current pin 1223.
+#available ammount 65700.
+#you can change this in respected .txt files.
 import datetime
 td = datetime.datetime.now()
 time_date = td.strftime("%d-%m-%Y %H:%M:%S")  #To mention time and date in mini statement
